@@ -315,3 +315,14 @@ main{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:16px 14p
 .nmen button{font-family:var(--f-en);font-weight:700;font-size:3.6rem;background:#fff;border:4px solid var(--k);color:var(--k);border-radius:20px;width:72px;height:92px;box-shadow:0 5px 0 var(--k);padding:0}
 .ghost.name{font-size:min(36vw,190px)}.ghost.name-en{font-size:min(23vw,125px)}
 .opt.txt small{font-family:var(--f-body)}
+
+/* ===== الشعار والعنوان ===== */
+.top h1{font-family:var(--f-ar);font-weight:800;font-size:1.5rem;line-height:1.2;display:flex;align-items:center;justify-content:center;gap:.25em;
+  color:var(--ink);text-shadow:2px 2px 0 var(--c3)}
+.top h1.home{font-size:2.1rem;text-shadow:none;gap:.18em}
+.top h1 .w1{color:#0B5ED7;-webkit-text-stroke:0;text-shadow:2px 3px 0 #fff,3px 4px 0 #BCD6F6}
+.top h1 .w2{background:linear-gradient(90deg,#2F9E44 0,#7CC32F 45%,#F59F00 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(2px 3px 0 #fff)}
+.hlogo{width:44px;height:44px;border-radius:50%;margin-inline-end:.1em;box-shadow:0 2px 6px rgba(31,42,68,.25)}
+.hello{flex-direction:column;text-align:center;align-items:center}
+.hero{width:min(78vw,320px);height:auto;filter:drop-shadow(0 10px 14px rgba(31,42,68,.22));animation:hop 3.2s ease-in-out infinite}
+@media (max-width:520px){.top h1.home{font-size:1.7rem}.hlogo{width:38px;height:38px}}

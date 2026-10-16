@@ -218,7 +218,11 @@ function bindPad(root, cv) {
 /* ---------- navigation chrome ---------- */
 const backBtn = $('#back');
 function chrome(title, back, theme) {
-  $('#title').textContent = title; document.title = title === 'عالم زين' ? 'عالم زين التعليمي | Zain\'s Learning World' : title + ' — عالم زين';
+  const h1 = $('#title');
+  if (title === 'عالم زين') h1.innerHTML = '<img class="hlogo" src="img/icon-192.png" alt=""><span class="w1">عالم</span><span class="w2">زين</span>';
+  else h1.textContent = title;
+  h1.className = title === 'عالم زين' ? 'home' : '';
+  document.title = title === 'عالم زين' ? 'عالم زين التعليمي | Zain\'s Learning World' : title + ' — عالم زين';
   backBtn.style.visibility = back ? 'visible' : 'hidden'; backBtn.dataset.to = back || ''; setTheme(theme);
 }
 backBtn.addEventListener('click', () => { if (backBtn.dataset.to) location.hash = backBtn.dataset.to; });
@@ -248,7 +252,7 @@ function pageHome() {
   chrome('عالم زين', '', 'home');
   app.innerHTML = `
   <div class="hello">
-    <svg class="mascot" viewBox="0 0 100 100" role="img" aria-label="نجمة"><use href="#starface"/></svg>
+    <img class="hero" src="img/logo.png" alt="شعار عالم زين — نتعلم نلعب ننمو" width="320" height="320">
     <button class="bubble" data-act="greet" style="text-align:start;cursor:pointer">أهلاً يا زين! 👋 ماذا تحب أن نتعلم اليوم؟ اختر واحدة من البطاقات.<small>Hi Zain! Pick something to learn today.</small></button>
   </div>
   <div class="tiles">${HOME_TILES.map(([h, t, g, n, s, c]) => `<a class="tile" href="${h}" style="${thStyle(t)}"><span class="tglyph ${c}">${g}</span><span class="tname">${n}</span><span class="tsub">${s}</span></a>`).join('')}</div>`;
